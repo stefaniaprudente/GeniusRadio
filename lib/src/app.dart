@@ -30,8 +30,15 @@ class App extends StatelessWidget {
           title: Text('Welcome to Codemotion'),
           centerTitle: true,
         ),
-        body: Center(
-          child: Text('Hello from: ' + this.env),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {},
+          child: Icon(Icons.add),
+        ),
+        body: Column(
+          children: [
+            Text("Hello from: " + this.env),
+            ElevatedButton(onPressed: () {}, child: Text("Elevated Button"))
+          ],
         ),
       ),
     );
