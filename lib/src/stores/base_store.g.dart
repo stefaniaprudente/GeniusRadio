@@ -24,6 +24,21 @@ mixin _$BaseStore on _BaseStore, Store {
     });
   }
 
+  final _$counterAtom = Atom(name: '_BaseStore.counter');
+
+  @override
+  int get counter {
+    _$counterAtom.reportRead();
+    return super.counter;
+  }
+
+  @override
+  set counter(int value) {
+    _$counterAtom.reportWrite(value, super.counter, () {
+      super.counter = value;
+    });
+  }
+
   final _$_BaseStoreActionController = ActionController(name: '_BaseStore');
 
   @override
@@ -38,9 +53,21 @@ mixin _$BaseStore on _BaseStore, Store {
   }
 
   @override
+  void incrementCounter() {
+    final _$actionInfo = _$_BaseStoreActionController.startAction(
+        name: '_BaseStore.incrementCounter');
+    try {
+      return super.incrementCounter();
+    } finally {
+      _$_BaseStoreActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
   String toString() {
     return '''
-blue: ${blue}
+blue: ${blue},
+counter: ${counter}
     ''';
   }
 }

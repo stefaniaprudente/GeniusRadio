@@ -11,9 +11,17 @@ abstract class _BaseStore with Store {
   @observable
   bool blue = true;
 
+  @observable
+  int counter = 0;
+
   @action
   void toggleBlue() {
     blue = !blue;
+  }
+
+  @action
+  void incrementCounter() {
+    counter++;
   }
 }
 

@@ -31,8 +31,18 @@ class _HomePageState extends State<HomePage> {
             title: Text('Welcome to Codemotion'),
             centerTitle: true,
           ),
-          body: Center(
-            child: Text('Hello from: ' + AppConfig.of(context).env),
+          body: Column(
+            children: [
+              Center(
+                child: Text('Hello from: ' + AppConfig.of(context).env),
+              ),
+              Center(
+                child: Text('Counter: ' + baseStore.counter.toString()),
+              ),
+              ElevatedButton(
+                  onPressed: baseStore.incrementCounter,
+                  child: Text("incremet"))
+            ],
           ),
           floatingActionButton: FloatingActionButton(
             onPressed: baseStore.toggleBlue,
