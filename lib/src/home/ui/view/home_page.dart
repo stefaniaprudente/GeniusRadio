@@ -5,8 +5,8 @@ import 'package:provider/provider.dart';
 import 'package:genius_radio/src/stores/base_store.dart';
 
 class HomePage extends StatefulWidget {
-  final BaseStore baseStore;
-  HomePage(this.baseStore);
+  // final BaseStore baseStore;
+  // HomePage(this.baseStore);
 
   @override
   _HomePageState createState() => _HomePageState();
@@ -22,7 +22,7 @@ class _HomePageState extends State<HomePage> {
       builder: (context) => MaterialApp(
         title: 'GeniusRadio',
         theme: ThemeData(
-          primarySwatch: widget.baseStore.blue ? Colors.blue : Colors.red,
+          primarySwatch: widget.baseStore.blueTheme ? Colors.blue : Colors.red,
         ),
         home: Scaffold(
           appBar: AppBar(

@@ -9,18 +9,18 @@ part of 'base_store.dart';
 // ignore_for_file: non_constant_identifier_names, unnecessary_brace_in_string_interps, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic
 
 mixin _$BaseStore on _BaseStore, Store {
-  final _$blueAtom = Atom(name: '_BaseStore.blue');
+  final _$blueThemeAtom = Atom(name: '_BaseStore.blueTheme');
 
   @override
-  bool get blue {
-    _$blueAtom.reportRead();
-    return super.blue;
+  bool get blueTheme {
+    _$blueThemeAtom.reportRead();
+    return super.blueTheme;
   }
 
   @override
-  set blue(bool value) {
-    _$blueAtom.reportWrite(value, super.blue, () {
-      super.blue = value;
+  set blueTheme(bool value) {
+    _$blueThemeAtom.reportWrite(value, super.blueTheme, () {
+      super.blueTheme = value;
     });
   }
 
@@ -40,7 +40,7 @@ mixin _$BaseStore on _BaseStore, Store {
   @override
   String toString() {
     return '''
-blue: ${blue}
+blueTheme: ${blueTheme}
     ''';
   }
 }
