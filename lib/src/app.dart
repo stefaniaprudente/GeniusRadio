@@ -24,6 +24,8 @@ class App extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    // tutta la app deve essere wrappata all'interno di Observer così da osservare il valore di
+    // baseStore.blue che permette di stabilire il colore del tema
     return Observer(
       builder: (_) => MaterialApp(
         title: 'GeniusRadio',
